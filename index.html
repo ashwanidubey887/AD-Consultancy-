@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><title>AD Consultancy</title>
+<!-- Firebase JS SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_ID",
+    appId: "YOUR_APP_ID"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+</script>
+</head>
+    <body><h1>Welcome to AD Consultancy</h1>
+    <a href='login.html'>Login</a> | <a href='register.html'>Register</a>
+    </body></html>
