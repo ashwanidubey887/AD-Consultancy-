@@ -1,31 +1,42 @@
-<!DOCTYPE html><html><head><title>Register</title>
-<!-- Firebase JS SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth.js"></script>
-<script>
-  const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_ID",
-    appId: "YOUR_APP_ID"
-  };
-  firebase.initializeApp(firebaseConfig);
-  const auth = firebase.auth();
-</script>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Register</title>
 </head>
-    <body><h2>Register</h2>
-    <input type="email" id="email" placeholder="Email"><br>
-    <input type="password" id="password" placeholder="Password"><br>
-    <button onclick="register()">Register</button>
-    <script>
-      function register() {
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        auth.createUserWithEmailAndPassword(email, password)
-          .then(user => alert('Registered successfully!'))
-          .catch(error => alert(error.message));
-      }
-    </script>
-    </body></html>
+<body>
+  <h1>Register</h1>
+  <input type="email" id="email" placeholder="Email"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="register()">Register</button>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBnEZ2Uj0fEQSfUDz8MUdEZKGjsXiF5NXU",
+      authDomain: "adconsultancy-187f8.firebaseapp.com",
+      projectId: "adconsultancy-187f8",
+      storageBucket: "adconsultancy-187f8.appspot.com",
+      messagingSenderId: "87379854843",
+      appId: "1:87379854843:web:your-app-id" // Replace with real appId after creating web app
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    function register() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          alert("Registration successful!");
+        })
+        .catch((error) => {
+          alert("Error: " + error.message);
+        });
+    }
+  </script>
+</body>
+</html>
